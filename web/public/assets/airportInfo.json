@@ -1,0 +1,202 @@
+[
+  {
+    "city" : "Atlanta",
+    "airportName" : "Hartsfield Jackson Atlanta International",
+    "airportCode" : "ATL"
+  },
+  {
+    "city" : "Chicago",
+    "airportName" : "Chicago O’Hare International",
+    "airportCode" : "ORD"
+  },
+  {
+    "city" : "Los Angeles",
+    "airportName" : "Los Angeles International",
+    "airportCode" : "LAX"
+  },
+  {
+    "city" : "Dallas-Fort Worth",
+    "airportName" : "Dallas Fort Worth International",
+    "airportCode" : "DFW"
+  },
+  {
+    "city" : "Denver",
+    "airportName" : "Denver International",
+    "airportCode" : "DEN"
+  },
+  {
+    "city" : "New York",
+    "airportName" : "John F Kennedy International",
+    "airportCode" : "JFK"
+  },
+  {
+    "city" : "San Francisco",
+    "airportName" : "San Francisco International",
+    "airportCode" : "SFO"
+  },
+  {
+    "city" : "Charlotte",
+    "airportName" : "Charlotte Douglas International",
+    "airportCode" : "CLT"
+  },
+  {
+    "city" : "Las Vegas",
+    "airportName" : "McCarran International",
+    "airportCode" : "LAS"
+  },
+  {
+    "city" : "Phoenix",
+    "airportName" : "Chicago O’Hare International",
+    "airportCode" : "PHX"
+  },
+  {
+    "city" : "Houston",
+    "airportName" : "George Bush Intercontinental Houston",
+    "airportCode" : "IAH"
+  },
+  {
+    "city" : "Miami",
+    "airportName" : "Miami International",
+    "airportCode" : "MIA"
+  },
+  {
+    "city" : "Orlando",
+    "airportName" : "Orlando International",
+    "airportCode" : "MCO"
+  },
+  {
+    "city" : "Newark",
+    "airportName" : "Newark Liberty International",
+    "airportCode" : "EWR"
+  },
+  {
+    "city" : "Seattle",
+    "airportName" : "Seattle Tacoma International",
+    "airportCode" : "SEA"
+  },
+  {
+    "city" : "Minneapolis",
+    "airportName" : "Minneapolis-St Paul International/Wold-Chamberlain",
+    "airportCode" : "MSP"
+  },
+  {
+    "city" : "Detroit",
+    "airportName" : "Detroit Metropolitan Wayne County",
+    "airportCode" : "DTW"
+  },
+  {
+    "city" : "Philadelphia",
+    "airportName" : "Philadelphia International",
+    "airportCode" : "PHL"
+  },
+  {
+    "city" : "Boston",
+    "airportName" : "General Edward Lawrence Logan International",
+    "airportCode" : "BOS"
+  },
+  {
+    "city" : "New York",
+    "airportName" : "La Guardia",
+    "airportCode" : "LGA"
+  },
+  {
+    "city" : "Fort Lauderdale",
+    "airportName" : "Fort Lauderdale Hollywood International",
+    "airportCode" : "FLL"
+  },
+  {
+    "city" : "Baltimore",
+    "airportName" : "Baltimore/Washington International Thurgood Marshall",
+    "airportCode" : "BWI"
+  },
+  {
+    "city" : "Washington",
+    "airportName" : "Washington Dulles International",
+    "airportCode" : "IAD"
+  },
+  {
+    "city" : "Salt Lake City",
+    "airportName" : "Salt Lake City International",
+    "airportCode" : "SLC"
+  },
+  {
+    "city" : "Washington",
+    "airportName" : "Ronald Reagan Washington National",
+    "airportCode" : "DCA"
+  },
+  {
+    "city" : "Chicago",
+    "airportName" : "Chicago Midway International",
+    "airportCode" : "MDW"
+  },
+  {
+    "city" : "Honolulu",
+    "airportName" : "Honolulu International",
+    "airportCode" : "HNL"
+  },
+  {
+    "city" : "San Diego",
+    "airportName" : "San Diego International",
+    "airportCode" : "SAN"
+  },
+  {
+    "city" : "Tampa",
+    "airportName" : "Tampa International",
+    "airportCode" : "TPA"
+  },
+  {
+    "city" : "Cleveland",
+    "airportName" : "Cleveland Hopkins International",
+    "airportCode" : "CLE"
+  },
+  {
+    "city" : "Portland",
+    "airportName" : "Portland International",
+    "airportCode" : "PDX"
+  },
+  {
+    "city" : "St Louis",
+    "airportName" : "Lambert St Louis International",
+    "airportCode" : "STL"
+  },
+  {
+    "city" : "Houston",
+    "airportName" : "William P Hobby",
+    "airportCode" : "HOU"
+  },
+  {
+    "city" : "Oakland",
+    "airportName" : "Metropolitan Oakland International",
+    "airportCode" : "OAK"
+  },
+  {
+    "city" : "Kansas City",
+    "airportName" : "Kansas City International",
+    "airportCode" : "MCI"
+  },
+  {
+    "city" : "Nashville",
+    "airportName" : "Nashville International",
+    "airportCode" : "BNA"
+  },
+  {
+    "city" : "Austin",
+    "airportName" : "Austin Bergstrom International",
+    "airportCode" : "AUS"
+  },
+  {
+    "city" : "Raleigh/Durham",
+    "airportName" : "Raleigh Durham International",
+    "airportCode" : "RDU"
+  },
+  {
+    "city" : "Sacramento",
+    "airportName" : "Sacramento International",
+    "airportCode" : "SMF"
+  },
+  {
+    "city" : "Santa Ana",
+    "airportName" : "John Wayne-Orange County",
+    "airportCode" : "SNA"
+  }
+]

@@ -1,0 +1,31 @@
+<div ng-if="model.dataLoading" class = "loader" align = "middle"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+</div>
+<div  ng-repeat="flight in model.flightTicketDetails track by $index"
+        class="containers">
+     <h3>Airline: {{flight.airline}} </h3>
+    <div ng-repeat="slice in flight.slices">
+        <ul>
+            <div ng-repeat="segment in slice.segments">
+                <li> Flight : {{segment.carrier}} {{segment.number}}</p>
+                    <div ng-repeat="leg in segment.legs">
+                        <p>{{leg.origin}} {{leg.departure | date}} {{leg.destination}} {{leg.arrival | date}}</p>
+                    </div>
+                </li>
+            </div>
+        </ul>
+        <br>
+    </div>
+    <h4>Price: {{flight.price}}</h4>
+    <br>
+    <a  class="btn btn-primary btn-block"
+        ng-click="model.gotoAirlinesSite(flight, 'flight', '')"
+        target="_blank">
+        Book Now
+    </a>
+</div>
+<a  ng-show="model.flightTicketDetails.length > 0"
+    ng-click="model.getMoreFlights()"
+    class="btn btn-warning btn-block"
+    style="margin-top:10px; margin-bottom: 10px;">
+    Search for more flights
+</a>

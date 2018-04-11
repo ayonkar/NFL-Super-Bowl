@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="css/ticket-menu.css">
+<div class="w3layouts-header-top">
+    <div class="container">
+        <div class="w3-header-top-grids">
+            <div class="w3-header-top-left">
+
+                <p ng-show="model.user != null" style="color:white">Hey, {{model.user.fname}}</p>
+            </div>
+            <div class="w3-header-top-right">
+                <div class="agileinfo-social-grids">
+                    <ul>
+                        <li><a href="https://www.facebook.com/NFL/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/NFL?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.nfl.com/news"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="https://www.instagram.com/nfl/?hl=en"><i class="fa fa-instagram"></i></a></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li ng-show="model.user != null"><a ng-click="model.logout()" href="">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<h1></h1>
+<div class="navbar-brand-logo">
+    <a href="#!/" class="index">&nbsp;
+        <img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500/nfl.png&w=400&h=400" alt="logo"
+             height="50px" width="50px"></a>
+</div>
+<br><!--
+--><div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    <li id="match">
+                            <button ng-click="model.prospect('match')"
+                                id="matchTicket"
+                                class="btn btn-primary btn-info btn-block sidebar-buttons btn-lg"><i class="fa fa-ticket"></i>
+                            Match Tickets
+                        </button>
+                    </li>
+                    <li id="flight">
+                        <button ng-click="model.prospect('flight')"
+                                id="flightTicket"
+                                class="btn btn-warning btn-info btn-block sidebar-buttons btn-lg"
+                                ><i class="material-icons">flight</i>
+                            Flight Tickets
+                        </button>
+                    </li>
+                    <li id="hotel">
+                        <button ng-click="model.prospect('hotel')"
+                                id="hotelReservation"
+                                class="btn btn-success btn-block sidebar-buttons btn-lg"
+                                ><i class="material-icons">hotel</i>
+                            Hotel Booking
+                        </button>
+                    </li>
+                    <li id="car">
+                        <button ng-click="model.prospect('car')"
+                                id="carRent"
+                                class="btn btn-danger btn-block sidebar-buttons btn-lg"
+                                ><i class="fa fa-car"></i>
+                            Car Rental
+                        </button>
+                    </li>
+                </ul>
+        </div>
+        <div class = "col-md-9">
+            <ng-include src="model.TicketType"></ng-include>
+        </div>
+    </div>
+</div>

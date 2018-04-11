@@ -1,0 +1,37 @@
+<div class="container">
+    <!--<div class="row">-->
+    <h1>{{model.nflTicketDetails.name}}</h1>
+    <img src="{{model.nflTicketDetails.image}}" class="matchLogo" height="500" width="1130">
+
+    <br>
+    <hr>
+    <h2>Venue: </h2>
+    <strong>
+        {{model.nflTicketDetails.address}},&nbsp;{{model.nflTicketDetails.venue}},&nbsp;{{model.nflTicketDetails.city}},&nbsp;{{model.nflTicketDetails.state}},&nbsp;{{model.nflTicketDetails.country}}
+    </strong>
+    <h2>Schedule: </h2>
+    <strong>{{model.nflTicketDetails.date | date}}</strong>
+    <h2>Time: </h2>
+    <strong>{{model.nflTicketDetails.start}}</strong>
+    <h2>Price Ranges: </h2>
+    <strong>${{model.nflTicketDetails.min}} - ${{model.nflTicketDetails.max}}</strong>
+    <h2>Ticket Sale Start Date: </h2>
+    <strong>{{model.nflTicketDetails.saleStart | date}} </strong>
+    <h2>Parking Detail: </h2>
+    <strong>
+        {{model.nflTicketDetails.parkingDetail}}
+    </strong>
+
+    <br><br>
+    <h2>Seatmap:</h2>
+    <img src="{{model.nflTicketDetails.seatmap}}">
+    <!--height="500" width="1150"-->
+    <br><br><br>
+    <div><a href="{{model.nflTicketDetails.url}}"
+            ng-click="model.bookTicket(model.nflTicketDetails)"
+            class="btn btn-primary btn-block"
+            target="_blank">
+        Book Now
+    </a>
+    </div>
+</div>

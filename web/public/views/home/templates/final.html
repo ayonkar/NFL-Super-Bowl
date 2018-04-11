@@ -1,0 +1,294 @@
+<html>
+
+
+
+<head>
+
+    <script language="JavaScript" type="text/javascript" src="../../js/shop.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+    $("#table").hide();
+    $("#btn").click(function()
+    {
+        $("#table").show();
+    });
+
+});
+</script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="js.js"></script>
+
+
+
+  <style>
+
+  .zoomin img {
+    height: 200px;
+    width: 200px;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+  }
+
+  .zoomin img:hover {
+    width: 300px;
+    height: 300px;
+  }
+
+  #products {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #products td, #products th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #products tr:nth-child(even){background-color: #f2f2f2;}
+
+  #products tr:hover {background-color: #ddd;}
+
+  #products th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  #btn{
+    background-color: pink;
+    height:30px;
+    width:70px;
+  }
+
+  #clr{
+    background-color: pink;
+    height:30px;
+    width:70px;
+  }
+
+  p {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  }
+
+  .value {
+    font-weight: bold;
+  }
+
+  .ri{
+    float: right;
+  }
+
+  #change{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  </style>
+</head>
+
+<body>
+
+  <div ng-app="myApp" ng-controller="myCtrl">
+
+
+
+   <table id="products" >
+    <thead>
+      <tr><img ng-src="../../assets/shop_logos/{{cart.names}}" class="ri" height="50" width="50"></tr><br>
+      <tr><span class="ri">{{ getTotalBeforeTax() | currency}}</span></tr>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Cost</th>
+
+        
+      </tr>
+    </thead>
+
+    <tr ng:repeat="items in item" class="zoomin">       
+      <td>
+        <img ng-src="../../assets/nfl_logos/{{items.name}}" class="zoomin"height="200" width="200"/>
+      </td>
+      <td>${{items.price}}</td>
+      <td><select ng-model="items.quantity" ng-options="x for x in quantity"></select></td>
+      <td> {{items.quantity * items.price | currency}}</td>
+      
+    </tr>
+  </table>
+
+  <table>
+
+    <tr>
+      <td>Total before tax: </td>
+      <td><span class="value">{{ getTotalBeforeTax() | currency}}<span></td>
+
+    </tr>
+    <tr>
+     <td>Sales tax (6.25%): </td>
+     <td><span class="value">{{ getSalesTax() | currency}}</span></td>
+   </tr>
+
+   <tr>
+     <td>Total after tax: </td>
+     <td>  
+      <span class="value">{{ getTotalAfterTax() | currency}}</span></td>
+    </tr>
+
+
+
+    <tr>
+      <td>Discount coupon:
+       <td><input type="text" ng:model="coupon"></td> 
+     </tr>
+     <tr>
+      <td> Total after discount: </td>
+      <td><span class="value">{{getTotalAfterDiscount() | currency}}</span></td>
+    </tr>
+
+
+    <form name="address">
+    
+
+    <tr>
+     <td>Shipping address: </td>
+     <td><input name="shipping" ng-model="somefield2" ng-minlength="5" required>
+     <span style="color:red" ng-show="address.shipping.$error.required">Please enter shipping address!</span>
+   </td>
+    </tr>
+
+    <tr>
+     <td>  <button id="btn">Make Payment</button> </td>
+    </tr>
+
+  </table><br><br>
+
+
+  <form>
+    <table id="table">
+
+      <tr>
+       <td id="change">Payment:</td>
+      </tr>
+      <tr>
+        <td class="normal">Mode of payment: </td>
+        <td class="normal"><input type=radio name="card"> Credit Card</td>
+        <td class="normal"><input type=radio name="card"> Debit Card</td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Card Number</td>
+        <td><input type=number ></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Expiry Date</td>
+        <td><input type=date name="expirydate" id="expirydate"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">CVV</td>
+        <td><input type=number name="cvv" id="cvv"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Name on Card</td>
+        <td><input type=text name="name" id="name"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Address 1</td>
+        <td><input type=text name="address1" id="address1"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Address 2</td>
+        <td><input type=text name="address2" id="address2"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">City</td>
+        <td><input type=text name="city" id="city"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">State</td>
+        <td><input type=text name="state" id="state"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Postal Code</td>
+        <td><input type=number name="code" id="code"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Country</td>
+        <td><input type=text name="country" id="country"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Email Id</td>
+        <td><input type=email name="emailid" id="emailid"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr>
+        <td class="normal">Phone Number</td>
+        <td><input type=number name="contact" id="contact"></td>
+      </tr>
+
+      <tr><td><p></p></td></tr>
+
+      <tr><td><input  id="clr" type="submit" value="Submit"></td></tr>
+    </table>
+
+    
+  </form>
+
+
+
+  
+    
+     
+
+ 
+
+ </form>
+
+</div>
+</body>
+</html>

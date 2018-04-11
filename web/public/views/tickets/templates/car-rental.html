@@ -1,0 +1,41 @@
+<div ng-repeat="car in model.cars track by $index"
+        class="container">
+    <h1 align = "center"><strong><u>{{car.company}}</u></strong></h1>
+    <div ng-repeat="option in car.options track by $index">
+      <img class="carLogo" src="{{option.image}}" height="50" width="90" align = "middle">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Category</th>
+                <th>Fuel</th>
+                <th>Transmission</th>
+                <th>Type</th>
+                <th>Rate</th>
+                <th>Estimated Total Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{option.category}}</td>
+                <td>{{option.fuel}}</td>
+                <td>{{option.transmission}}</td>
+                <td>{{option.type}}</td>
+                <td>{{option.rate}}</td>
+                <td>{{option.price}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2>Address: </h2>
+        <strong>
+            {{car.line1}},&nbsp;{{car.city}},&nbsp;{{car.region}},&nbsp;{{car.country}}
+        </strong>
+        <br>
+        <br>
+        <a  class="btn btn-primary btn-block" href="{{car.website}}"
+            ng-click="model.bookTicket(option, 'car', car.company)"
+            target="_blank">
+            Book Now
+        </a>
+        <br>
+    </div>
+</div>

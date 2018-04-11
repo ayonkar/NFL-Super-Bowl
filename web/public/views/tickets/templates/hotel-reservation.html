@@ -1,0 +1,72 @@
+
+<div ng-if="model.dataLoading1" class = "loader" align = "middle"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+</div>
+<div ng-repeat="hotel in model.hotels track by $index" class="container">
+    <h1 align = "center">{{hotel.name}}</h1>
+    <h4>Area: </h4>
+    <span font-size = "14px;">{{hotel.address}},&nbsp; {{hotel.city}},&nbsp; {{hotel.region}}, &nbsp; {{hotel.country}}</span>
+    <!--<div id="map">View on Map</div>-->
+    <!--<script>-->
+        <!--var x = hotel.latitude;-->
+        <!--var y = hotel.longitude;-->
+<!--//        var i;-->
+        <!--console.log("the latitude is :" + x + y);-->
+
+
+            <!--function initMap() {-->
+                <!--var uluru = {lat: x, lng: y};-->
+<!--//                for(i = 0; i < hotel.map.length; i++) {-->
+<!--//                    console.log("Hotel Map Length"+hotel.map.length);-->
+                <!--//var uluru = {lat: hotel.map[i], lng: hotel.map[i]};-->
+                <!--var map = new google.maps.Map(document.getElementById('map'), {-->
+                    <!--zoom: 4,-->
+                    <!--center: uluru-->
+                <!--});-->
+                <!--var marker = new google.maps.Marker({-->
+                    <!--position: uluru,-->
+                    <!--map: map-->
+                <!--});-->
+<!--//            }-->
+        <!--}-->
+    <!--</script>-->
+    <!--<script async defer-->
+            <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHjEGSiLl1ZOHNr4oLB9jCEoVHeqyp8CU&callback=initMap" type="text/javascript">-->
+    <!--</script>-->
+    </br>
+    <img src = "https://maps.googleapis.com/maps/api/staticmap?center={{hotel.latitude}},{{hotel.longitude}}&zoom=12&size=1500x300&maptype=roadmap&key=AIzaSyBrUMIoeVMOBff-lRA2tY6-Taiw7tOrlD4">
+    <hr>
+    <h4>Room Type: <span style="font-weight: normal;">{{hotel.roomType}}</span></h4>
+    <h4>Bed Available: <span style="font-weight: normal;">{{hotel.bedType}}</span></h4>
+    <h4>Number of bed(s): <span style="font-weight: normal;">{{hotel.beds}}</span></h4>
+    <h4>Amenities and Services:</h4>
+    <div ng-repeat="amenity in hotel.amenities track by $index">
+        <ul class="fa-ul">
+            <li>
+                <i class="fa-li fa fa-spinner fa-spin"></i>
+                 {{amenity}}
+            </li>
+        </ul>
+    </div>
+    <h4>Room Description:</h4>
+    <div ng-repeat="description in hotel.description track by $index">
+        <ul class="fa-ul">
+            <li>
+                <i class="fa-li fa fa-spinner fa-spin"></i>
+                {{description}}
+            </li>
+        </ul>
+    </div>
+    <h4>Price: {{hotel.price}}</h4>
+    <h4>Call us: {{hotel.phone}}</h4>
+    <h2 ng-if="hotel.rating">Rating: <span font-size = "14px;">{{hotel.rating}}</span></h2>
+    <br>
+    <a class="btn btn-primary btn-block"
+       ng-click="model.bookTicket(hotel, 'hotel', '')"
+       target="_blank">
+        Book Now
+    </a>
+
+</div>
+    <div ng-if="model.dataLoading2">
+    <a href="" ng-click="model.getMoreHotels()" class="btn btn-warning btn-block">Get More Hotels</a>
+    </div>

@@ -1,0 +1,132 @@
+<link rel="stylesheet" href="css/edit-profile.css">
+<div class="w3layouts-header-top">
+    <div class="container">
+        <div class="w3-header-top-grids">
+            <div class="w3-header-top-left">
+
+                <p ng-show="model.user != null" style="color:white">Hey, {{model.user.fname}}</p>
+            </div>
+            <div class="w3-header-top-right">
+                <div class="agileinfo-social-grids">
+                    <ul>
+                        <li><a href="https://www.facebook.com/NFL/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/NFL?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.nfl.com/news"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="https://www.instagram.com/nfl/?hl=en"><i class="fa fa-instagram"></i></a></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li ng-show="!model.user"><a href="#!/editProfile">Edit Profile</a></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li ng-show="model.user != null"><a ng-click="model.logout()" href="">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<h1></h1>
+<div class="navbar-brand-logo">
+    <a href="#!/" class="index">&nbsp;
+        <img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500/nfl.png&w=400&h=400" alt="logo"
+            height="50px" width="50px"></a>
+</div>
+<div class="container">
+    <h1>Profile</h1>
+    <hr>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                <h6>Upload your photo</h6>
+
+                <input type="file" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-md-9 personal-info">
+            <br>
+            <br>
+
+            <form class="form-horizontal" role="form">
+
+                    <h4  ng-show="model.message"
+                            class="alert alert-success alert text-center">
+                        {{model.message}}
+                    </h4>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">First name:</label>
+                    <div class="col-lg-7">
+                        <input ng-model = "model.user.fname" class="form-control" id = "fName" type="text" placeholder="Matthew">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Last name:</label>
+                    <div class="col-lg-7">
+                        <input ng-model = "model.user.lname" class="form-control" type="text" placeholder="Stafford">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="gender">Gender</label>
+                    <div class="col-lg-3">
+                        <select ng-model = "model.user.gender"
+                                class="form-control"
+                                type="text">
+                            <option value = "" disabled selected>Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female" required>Female</option>
+                            <option value="transgender">Transgender</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-7">
+                        <input ng-model = "model.user.email" class="form-control" type="text" placeholder="firstname.lastname@nfl.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="birthday">Birthday</label>
+                    <div class="col-lg-7">
+                        <input  ng-model="model.user.birthdate"
+                                type="text"
+                                id="year"
+                                class="form-control"
+                                value=""
+                                placeholder="YYYY-MM-DD">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"> New Password:</label>
+                    <div class="col-md-7">
+                        <input ng-model = "password" class="form-control" type="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Confirm Password:</label>
+                    <div class="col-md-7">
+                        <input ng-model = "password1" class="form-control" type="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-7">
+                        <input ng-click="model.update(model.user,password,password1)" type="button" class="btn btn-primary" value="Save Changes">
+                        <span></span>
+                        <input type="reset" class="btn btn-default" value="Cancel">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>

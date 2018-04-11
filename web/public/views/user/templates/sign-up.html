@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="css/sign-in.css">
+<div class="navbar-brand-logo">
+    <a href="#!/" class = "index"><img src = "http://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500/nfl.png&w=400&h=400" alt = "logo" height = "50px" width = "50px" ></a>
+</div>
+<h1></h1>
+<h1></h1>
+<div class="login">
+    <div class="ribbon-wrapper h2 ribbon-red">
+        <div class="ribbon-front">
+            <h2>Register</h2>
+        </div>
+        <div class="ribbon-edge-topleft2">
+        </div>
+        <div class="ribbon-edge-bottomleft">
+        </div>
+    </div>
+    <form>
+        <h3 ng-show="model.message" class="alert alert-danger alert text-center">{{model.message}}</h3>
+        <ul>
+            <li><span class="icon envelope" style="padding-right: 30px;"></span>
+                <input ng-model="user.username" type="text" placeholder="Username">
+            </li>
+            <li><span class="icon user" style="padding-right: 30px;"></span>
+                <input ng-model="user.fname"  type="text" name="fName" placeholder="First Name" >
+            </li>
+            <li><span class="icon user" style="padding-right: 30px;"></span>
+                <input  ng-model="user.lname" type="text" name="lName" placeholder="Last Name">
+            </li>
+            <li><span class="icon lock" style="padding-right: 30px;"></span>
+                <input ng-model="user.password" type="password" name="password" placeholder="Password">
+            </li>
+            <li><span class="icon lock" style="padding-right: 30px;"></span>
+                <input ng-model="user.vpassword" type="password" name="verifyPassword" placeholder=" Verify Password">
+            </li>
+        </ul>
+
+    </form>
+    <div class="submit">
+        <input type="submit" ng-click="model.register(user)" value="Sign up" >
+    </div>
+</div>
+
+<div class="copy-right">
+    <p>Copyright &copy; 2017  All rights  Reserved</p>
+</div>
